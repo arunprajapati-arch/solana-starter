@@ -23,7 +23,7 @@ const to = new PublicKey("Fk1UXk3WR1syysBFyLQfURFTXsAAcBcgTbbEyB3SmsXi");
         // Get the token account of the toWallet address, and if it does not exist, create it
         const toWallet = await getOrCreateAssociatedTokenAccount(connection, keypair,mint, to);
         // Transfer the new token to the "toTokenAccount" we just created
-        const txn = await transfer(connection, keypair, fromWallet.address, toWallet.address, keypair.publicKey, 10000,)
+        const txn = await transfer(connection, keypair, fromWallet.address, toWallet.address, keypair.publicKey, 1000000,)
         console.log(`Txn is ${txn}`);
         
     } catch(e) {

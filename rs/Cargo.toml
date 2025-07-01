@@ -13,3 +13,5 @@ solana-sdk = "1.15.2"
 solana-client = "1.15.2"
 solana-program = "1.15.2"
 solana-idlgen = { git = "https://github.com/deanmlittle/solana-idlgen.git" }
+wasm-bindgen = "0.2.100"
+time = "0.3.21"

@@ -3,6 +3,7 @@ import { createUmi } from "@metaplex-foundation/umi-bundle-defaults"
 import { createGenericFile, createSignerFromKeypair, signerIdentity } from "@metaplex-foundation/umi"
 import { irysUploader } from "@metaplex-foundation/umi-uploader-irys"
 import { readFile } from "fs/promises"
+import { readFileSync } from "fs"
 
 // Create a devnet connection
 const umi = createUmi('https://api.devnet.solana.com');
@@ -16,13 +17,18 @@ umi.use(signerIdentity(signer));
 (async () => {
     try {
         //1. Load image
+        const image = await readFile("./angry-ai.png")
         //2. Convert image to generic file.
+        const genericImage = createGenericFile(image,"angry-ai", {
+            contentType: "image/png"
+        })
         //3. Upload image
 
-        // const image = ???
+        const [myUri] = await umi.uploader.upload([genericImage])
 
-        // const [myUri] = ??? 
-        // console.log("Your image URI: ", myUri);
+       
+        console.log("Your image URI: ", myUri);
+        // Your image URI:  https://arweave.net/HvZNN3igHYKnewkpNzk5TaGhBmyfPvGd7EdcHTo12orA
     }
     catch(error) {
         console.log("Oops.. Something went wrong", error);
