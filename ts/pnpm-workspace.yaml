@@ -1,6 +1,0 @@
-onlyBuiltDependencies:
-  - bigint-buffer
-  - bufferutil
-  - keccak
-  - secp256k1
-  - utf-8-validate
