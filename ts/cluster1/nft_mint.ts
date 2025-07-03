@@ -18,9 +18,9 @@ const mint = generateSigner(umi);
 (async () => {
     let tx = createNft(umi, {
         mint,
-        name: "Angry AI",
-        symbol: "AAI",
-        uri:"  https://devnet.irys.xyz/6LdJTLNcBpnXBovTuQ9e4somR4b8nCzBsYiMgjcxuhHp",
+        name: "Crazy Jeff",
+        symbol: "CJ",
+        uri:"  https://devnet.irys.xyz/AW88jWAtNmYs8r5mC9ahb3EaRsr9oB3hqPNLYnWT55gd",
         sellerFeeBasisPoints: percentAmount(5),
     })
     let result = await tx.sendAndConfirm(umi);
@@ -30,3 +30,6 @@ const mint = generateSigner(umi);
 
     console.log("Mint Address: ", mint.publicKey);
 })();
+
+// https://explorer.solana.com/tx/3U9mjHPsypZbrwMziQ7xD4voWSY3PdXqfBi67fUjit8krFZ8BqYgzxNUqFTNNt3CexASbSrDq78tjwGeMFhs1d6o?cluster=devnet
+// Mint Address:  6nRdxGT6yfah7RQHtXTtyt6hbbMfMbXmcpfu7RBJozrz

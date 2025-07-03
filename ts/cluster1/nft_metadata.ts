@@ -17,26 +17,31 @@ umi.use(signerIdentity(signer));
         // Follow this JSON structure
         // https://docs.metaplex.com/programs/token-metadata/changelog/v1.0#json-structure
 
-        const image = "https://devnet.irys.xyz/HvZNN3igHYKnewkpNzk5TaGhBmyfPvGd7EdcHTo12orA"
+        const image = "https://devnet.irys.xyz/4VfMAVAyvAsRKKyEv8Ntx4wbs76q9ZmEARdxZSDW5TGY"
 
         const metadata = {
-            name: "Angry AI",
-            symbol: "AAI",
-            description: "A visual representation of how my AI feels",
+            name: "Crazy Jeff",
+            symbol: "CJ",
+            description: "The OG Jeff",
             image,
             properties: {
                 files: [
                     {
                         type: "image/png",
-                        uri: "image"
+                        uri: image,
                     },
                 ]
             },
-            creators: []
+            creators: [{
+                address: signer.publicKey,
+                verified: true,
+                share: 5
+            }]
         };
         const myUri = await umi.uploader.uploadJson(metadata)
         console.log("Your metadata URI: ", myUri);
-        // Your metadata URI:  https://arweave.net/6LdJTLNcBpnXBovTuQ9e4somR4b8nCzBsYiMgjcxuhHp
+        // Your metadata URI:  https://arweave.net/6LdJTLNcBpnXBovTuQ9e4somR4b8nCzBsYiMgjcxuhHp  angry-ai
+        // Your metadata URI:  https://arweave.net/AW88jWAtNmYs8r5mC9ahb3EaRsr9oB3hqPNLYnWT55gd  crazy-jeff
     }
     catch(error) {
         console.log("Oops.. Something went wrong", error);

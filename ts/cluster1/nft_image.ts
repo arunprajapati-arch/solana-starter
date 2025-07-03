@@ -17,7 +17,7 @@ umi.use(signerIdentity(signer));
 (async () => {
     try {
         //1. Load image
-        const image = await readFile("./angry-ai.png")
+        const image = await readFile("./crazy-jeff.png")
         //2. Convert image to generic file.
         const genericImage = createGenericFile(image,"angry-ai", {
             contentType: "image/png"
@@ -28,7 +28,8 @@ umi.use(signerIdentity(signer));
 
        
         console.log("Your image URI: ", myUri);
-        // Your image URI:  https://arweave.net/HvZNN3igHYKnewkpNzk5TaGhBmyfPvGd7EdcHTo12orA
+        // Your image URI:  https://arweave.net/HvZNN3igHYKnewkpNzk5TaGhBmyfPvGd7EdcHTo12orA   angry-ai
+        // Your image URI:  https://arweave.net/4VfMAVAyvAsRKKyEv8Ntx4wbs76q9ZmEARdxZSDW5TGY  crazy-jeff
     }
     catch(error) {
         console.log("Oops.. Something went wrong", error);
